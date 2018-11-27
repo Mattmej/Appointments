@@ -32,6 +32,13 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    
+    
     func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // will get an index out of bounds exception with this value.

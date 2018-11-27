@@ -22,13 +22,13 @@ class AppointmentHeader: UITableViewCell {
     }
     */
     
-    func setup(header:Header) {
-        self.topLabel.text = header.headerLabel
+    func setup(header:String) {
+        self.topLabel.text = header
 //        self.segmentedControl[0].text = header.segmentedControlText1
 //        self.segmentedControl[1].text = header.segmentedControlText2
         
-        self.segmentedControl.setTitle(header.segmentedControlText1, forSegmentAt: 0)
-        self.segmentedControl.setTitle(header.segmentedControlText2, forSegmentAt: 1)
+//        self.segmentedControl.setTitle(header.segmentedControlText1, forSegmentAt: 0)
+//        self.segmentedControl.setTitle(header.segmentedControlText2, forSegmentAt: 1)
     }
 
 }
