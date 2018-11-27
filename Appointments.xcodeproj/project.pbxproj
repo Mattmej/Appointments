@@ -16,6 +16,8 @@
 		C918EFEF21ADD2620022A3C1 /* AppointmentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918EFEE21ADD2620022A3C1 /* AppointmentsUITests.swift */; };
 		C9DA8BC221ADDBC700E84A87 /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8BC121ADDBC700E84A87 /* AppointmentTableViewCell.swift */; };
 		C9DA8BC521ADE01200E84A87 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8BC421ADE01200E84A87 /* Appointment.swift */; };
+		C9DA8BC721ADE77E00E84A87 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8BC621ADE77E00E84A87 /* Header.swift */; };
+		C9DA8BCA21ADE94D00E84A87 /* AppointmentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8BC921ADE94D00E84A87 /* AppointmentHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		C918EFF021ADD2620022A3C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9DA8BC121ADDBC700E84A87 /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		C9DA8BC421ADE01200E84A87 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		C9DA8BC621ADE77E00E84A87 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		C9DA8BC921ADE94D00E84A87 /* AppointmentHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,11 @@
 		C918EFCD21ADD2600022A3C1 /* Appointments */ = {
 			isa = PBXGroup;
 			children = (
+				C9DA8BC821ADE7F900E84A87 /* Cells */,
 				C9DA8BC321ADDFEA00E84A87 /* Models */,
 				C918EFCE21ADD2600022A3C1 /* AppDelegate.swift */,
 				C918EFD021ADD2600022A3C1 /* ViewController.swift */,
 				C918EFD221ADD2600022A3C1 /* Main.storyboard */,
-				C9DA8BC121ADDBC700E84A87 /* AppointmentTableViewCell.swift */,
 				C918EFD521ADD2610022A3C1 /* Assets.xcassets */,
 				C918EFD721ADD2610022A3C1 /* LaunchScreen.storyboard */,
 				C918EFDA21ADD2610022A3C1 /* Info.plist */,
@@ -135,8 +139,18 @@
 			isa = PBXGroup;
 			children = (
 				C9DA8BC421ADE01200E84A87 /* Appointment.swift */,
+				C9DA8BC621ADE77E00E84A87 /* Header.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C9DA8BC821ADE7F900E84A87 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C9DA8BC121ADDBC700E84A87 /* AppointmentTableViewCell.swift */,
+				C9DA8BC921ADE94D00E84A87 /* AppointmentHeader.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DA8BC721ADE77E00E84A87 /* Header.swift in Sources */,
 				C918EFD121ADD2600022A3C1 /* ViewController.swift in Sources */,
+				C9DA8BCA21ADE94D00E84A87 /* AppointmentHeader.swift in Sources */,
 				C918EFCF21ADD2600022A3C1 /* AppDelegate.swift in Sources */,
 				C9DA8BC221ADDBC700E84A87 /* AppointmentTableViewCell.swift in Sources */,
 				C9DA8BC521ADE01200E84A87 /* Appointment.swift in Sources */,

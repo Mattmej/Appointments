@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var items:[Appointment] = []
+    var headerLabels:[Header] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
 //        cell.setup(appointment: <#T##Appointment#>)
         return cell
+    }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewHeaderFooterView {
+//        
+//        guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerView") as? AppointmentHeader else { return UITableViewHeaderFooterView() }
+//        
+//        let headerLabel = headerLabels[indexPath.row]
+//        headerCell.setup(Header:headerLabel)
+//        return headerCell
+        
+        
+
     }
 }
 
