@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppointmentHeader: UITableViewHeaderFooterView {
+class AppointmentHeader: UITableViewCell {
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
