@@ -42,6 +42,9 @@
                                                         <segment title="First"/>
                                                         <segment title="Second"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="segmentedController:" destination="kQN-Ct-R2U" eventType="valueChanged" id="XFB-f1-Ur4"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>

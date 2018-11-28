@@ -8,7 +8,37 @@
 
 import UIKit
 
+// Can be a string. By default, int.
+
+enum AppointmentType: Int {
+//    case past
+//    case upcoming
+    
+    case list1
+    case list2
+
+}
+
+//func displayLists(itemArray:[Appointment], segment: Int) -> UITableViewCell {
+//    switch <#value#> {
+//    case <#pattern#>:
+//        <#code#>
+//    default:
+//        <#code#>
+//    }
+//}
+
+//enum HttpCode: Int {
+//    case ok = 200
+//    case notFound = 404
+//    case forbidden = 401
+//    case serverError = 500
+//}
+
 class ViewController: UIViewController {
+
+
+    
     
     var items:[Appointment] = []
     var headerLabels:[Header] = []
@@ -26,6 +56,15 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+//        var sc = 200
+//
+//        switch sc {
+//        case HttpCode.ok.rawValue:
+//            break
+//        default:
+//            break
+//        }
     }
 
 
@@ -48,34 +87,23 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return items.count
     }
     
-//    func tableview
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? AppointmentTableViewCell else { return UITableViewCell() }
+        
+        
 
         let item = items[indexPath.row]
         cell.setup(appointment: item)
         
-//        cell.setup(appointment: <#T##Appointment#>)
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewHeaderFooterView {
-//
-//        guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerView") as? AppointmentHeader else { return UITableViewHeaderFooterView() }
-//
-//        let headerLabel = headerLabels[indexPath.row]
-//        headerCell.setup(Header:headerLabel)
-//        return headerCell
-    
-        
 
-//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerView") as? AppointmentHeader else { return UITableViewCell() }
-//        headerCell.topLabel.text = "Test"
         headerCell.setup(header: "Test")
         return headerCell
     }

@@ -9,9 +9,28 @@
 import UIKit
 
 class AppointmentHeader: UITableViewCell {
-    @IBOutlet weak var topLabel: UILabel!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var topLabel: UILabel!
+    
+    @IBAction func segmentedController(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            topLabel.text = "First segment selected.";
+        case 1:
+            topLabel.text = "Second segment selected.";
+        default:
+            topLabel.text = "Label";
+        }
+
+    }
+    
+    
+    
+//    @IBAction func segmentedController(_ sender: Any) {
+//    }
+//
     
 
     /*
@@ -37,11 +56,8 @@ class AppointmentHeader: UITableViewCell {
     
     func setup(header:String) {
         self.topLabel.text = header
-//        self.segmentedControl[0].text = header.segmentedControlText1
-//        self.segmentedControl[1].text = header.segmentedControlText2
-        
-//        self.segmentedControl.setTitle(header.segmentedControlText1, forSegmentAt: 0)
-//        self.segmentedControl.setTitle(header.segmentedControlText2, forSegmentAt: 1)
+
     }
+    
 
 }
