@@ -28,6 +28,31 @@ enum AppointmentType: Int {
 //    }
 //}
 
+func filterLists(inputArray:[Appointment]) -> [Appointment] {
+    
+    var workingArray = inputArray
+    var currentList = AppointmentType.list1
+//    currentList = .list2
+    
+    switch currentList {
+    case .list1:
+        workingArray.append(Appointment(image: "user", name: "Isai", date: "27/11/2018", place: "Atlanta", specialty: "Lawyer"));
+        workingArray.append(Appointment(image: "user", name: "Eduardo", date: "28/11/2018", place: "Atlanta", specialty: "PHP Developer"));
+        workingArray.append(Appointment(image: "user", name: "Matt", date: "29/11/2018", place: "Atlanta", specialty: "Teacher"));
+//        return workingArray
+    case .list2:
+        workingArray.append(Appointment(image: "user", name: "Jesus", date: "30/11/2018", place: "Atlanta", specialty: "Java Developer"))
+        workingArray.append(Appointment(image: "user", name: "Adan", date: "30/11/2018", place: "Atlanta", specialty: "iOS Developer"))
+//        return workingArray
+    default:
+//        return inputArray
+        break
+    }
+    
+    return workingArray
+    
+}
+
 //enum HttpCode: Int {
 //    case ok = 200
 //    case notFound = 404
@@ -40,17 +65,20 @@ class ViewController: UIViewController {
 
     
     
-    var items:[Appointment] = []
+    var emptyItems:[Appointment] = []
+    var items:[Appointment] = filterLists(inputArray: [])
     var headerLabels:[Header] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        items.append(Appointment(image: "user", name: "Isai", date: "27/11/2018", place: "Atlanta", specialty: "Lawyer"))
-        items.append(Appointment(image: "user", name: "Eduardo", date: "28/11/2018", place: "Atlanta", specialty: "PHP Developer"))
-        items.append(Appointment(image: "user", name: "Matt", date: "29/11/2018", place: "Atlanta", specialty: "Teacher"))
-        items.append(Appointment(image: "user", name: "Jesus", date: "30/11/2018", place: "Atlanta", specialty: "Java Developer"))
-        items.append(Appointment(image: "user", name: "Adan", date: "30/11/2018", place: "Atlanta", specialty: "iOS Developer"))
+        
+        
+//        items.append(Appointment(image: "user", name: "Isai", date: "27/11/2018", place: "Atlanta", specialty: "Lawyer"))
+//        items.append(Appointment(image: "user", name: "Eduardo", date: "28/11/2018", place: "Atlanta", specialty: "PHP Developer"))
+//        items.append(Appointment(image: "user", name: "Matt", date: "29/11/2018", place: "Atlanta", specialty: "Teacher"))
+//        items.append(Appointment(image: "user", name: "Jesus", date: "30/11/2018", place: "Atlanta", specialty: "Java Developer"))
+//        items.append(Appointment(image: "user", name: "Adan", date: "30/11/2018", place: "Atlanta", specialty: "iOS Developer"))
     }
 
     override func didReceiveMemoryWarning() {
