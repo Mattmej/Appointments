@@ -48,6 +48,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return items.count
     }
     
+//    func tableview
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? AppointmentTableViewCell else { return UITableViewCell() }
 
@@ -69,5 +72,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
 
 //    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerView") as? AppointmentHeader else { return UITableViewCell() }
+//        headerCell.topLabel.text = "Test"
+        headerCell.setup(header: "Test")
+        return headerCell
+    }
 }
 

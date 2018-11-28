@@ -22,6 +22,19 @@ class AppointmentHeader: UITableViewCell {
     }
     */
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+    
+    
     func setup(header:String) {
         self.topLabel.text = header
 //        self.segmentedControl[0].text = header.segmentedControlText1
