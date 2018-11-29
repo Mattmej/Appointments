@@ -19,40 +19,6 @@ enum AppointmentType: Int {
 
 }
 
-//func displayLists(itemArray:[Appointment], segment: Int) -> UITableViewCell {
-//    switch <#value#> {
-//    case <#pattern#>:
-//        <#code#>
-//    default:
-//        <#code#>
-//    }
-//}
-
-func filterLists(currentList:AppointmentType) -> [Appointment] {
-    
-    var workingArray:[Appointment] = []
-//    var currentList = AppointmentType.list1
-//    currentList = .list2
-    
-    switch currentList {
-    case .list1:
-        workingArray.append(Appointment(image: "user", name: "Isai", date: "27/11/2018", place: "Atlanta", specialty: "Lawyer"));
-        workingArray.append(Appointment(image: "user", name: "Eduardo", date: "28/11/2018", place: "Atlanta", specialty: "PHP Developer"));
-        workingArray.append(Appointment(image: "user", name: "Matt", date: "29/11/2018", place: "Atlanta", specialty: "Teacher"));
-//        return workingArray
-    case .list2:
-        workingArray.append(Appointment(image: "user", name: "Jesus", date: "30/11/2018", place: "Atlanta", specialty: "Java Developer"))
-        workingArray.append(Appointment(image: "user", name: "Adan", date: "30/11/2018", place: "Atlanta", specialty: "iOS Developer"))
-//        return workingArray
-    default:
-//        return inputArray
-        break
-    }
-    
-    return workingArray
-    
-}
-
 //enum HttpCode: Int {
 //    case ok = 200
 //    case notFound = 404
@@ -61,6 +27,10 @@ func filterLists(currentList:AppointmentType) -> [Appointment] {
 //}
 
 class ViewController: UIViewController, BDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     
     var items:[Appointment] = []
     
@@ -74,11 +44,35 @@ class ViewController: UIViewController, BDelegate {
         default:
             items = []
         }
+        tableView.reloadSections([0, 1], with: .fade)
         return items
 
     }
     
-
+    func filterLists(currentList: AppointmentType) -> [Appointment] {
+        
+        var workingArray: [Appointment] = []
+        //    var currentList = AppointmentType.list1
+        //    currentList = .list2
+        
+        switch currentList {
+        case .list1:
+            workingArray.append(Appointment(image: "user", name: "Isai", date: "27/11/2018", place: "Atlanta", specialty: "Lawyer"));
+            workingArray.append(Appointment(image: "user", name: "Eduardo", date: "28/11/2018", place: "Atlanta", specialty: "PHP Developer"));
+            workingArray.append(Appointment(image: "user", name: "Matt", date: "29/11/2018", place: "Atlanta", specialty: "Teacher"));
+        //        return workingArray
+        case .list2:
+            workingArray.append(Appointment(image: "user", name: "Jesus", date: "30/11/2018", place: "Atlanta", specialty: "Java Developer"))
+            workingArray.append(Appointment(image: "user", name: "Adan", date: "30/11/2018", place: "Atlanta", specialty: "iOS Developer"))
+            //        return workingArray
+            //    default:
+            ////        return inputArray
+            //        break
+        }
+        
+        return workingArray
+        
+    }
 
     
     
@@ -96,6 +90,8 @@ class ViewController: UIViewController, BDelegate {
 //        items.append(Appointment(image: "user", name: "Matt", date: "29/11/2018", place: "Atlanta", specialty: "Teacher"))
 //        items.append(Appointment(image: "user", name: "Jesus", date: "30/11/2018", place: "Atlanta", specialty: "Java Developer"))
 //        items.append(Appointment(image: "user", name: "Adan", date: "30/11/2018", place: "Atlanta", specialty: "iOS Developer"))
+        
+        items = filterLists(currentList: .list1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,6 +125,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 //        return 10
         
         // will give the number of rows as the number of items in the array.
+        
+        print("Size: ", items.count)
+        
         return items.count
     }
     
