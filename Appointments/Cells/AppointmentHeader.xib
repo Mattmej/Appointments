@@ -22,6 +22,10 @@
                         <segment title="First"/>
                         <segment title="Second"/>
                     </segments>
+                    <connections>
+                        <action selector="segmentedController:" destination="iN0-l3-epB" eventType="valueChanged" id="1al-rr-RXs"/>
+                        <action selector="segmentedController:" destination="-2" eventType="valueChanged" id="WzQ-jL-dOL"/>
+                    </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56u-l4-eeK">
                     <rect key="frame" x="10" y="10" width="42" height="21"/>
@@ -39,6 +43,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="segmentedControl" destination="MJE-ML-xWY" id="ued-7l-tVa"/>
+                <outlet property="topLabel" destination="56u-l4-eeK" id="FMo-kE-Dnh"/>
+            </connections>
             <point key="canvasLocation" x="102.5" y="-224.5"/>
         </view>
     </objects>

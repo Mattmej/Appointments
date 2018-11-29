@@ -16,9 +16,13 @@ class AppointmentHeader: UITableViewHeaderFooterView {
     
     var delegate:BDelegate?
     
+    @IBOutlet weak var topLabel: UILabel!
+    
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var topLabel: UILabel!
+    
+    
+    
     
     @IBAction func segmentedController(_ sender: Any) {
 //        switch segmentedControl.selectedSegmentIndex {
@@ -33,7 +37,7 @@ class AppointmentHeader: UITableViewHeaderFooterView {
 //        }
 
         delegate?.switchLists(item: segmentedControl.selectedSegmentIndex)
-        
+
     }
     
     
