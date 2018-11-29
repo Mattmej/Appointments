@@ -92,6 +92,8 @@ class ViewController: UIViewController, BDelegate {
 //        items.append(Appointment(image: "user", name: "Adan", date: "30/11/2018", place: "Atlanta", specialty: "iOS Developer"))
         
         items = filterLists(currentList: .list1)
+        
+        tableView.register(UINib(nibName: "AppointmentHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "headerView")
     }
 
     override func didReceiveMemoryWarning() {
@@ -145,13 +147,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 
-    
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerView") as? AppointmentHeader else { return UITableViewCell() }
-        
+        guard let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerView") as? AppointmentHeader else { return UITableViewCell() }
+
         headerCell.delegate = self
         headerCell.setup(header: "Test")
         return headerCell
     }
+    
+    
 }
 

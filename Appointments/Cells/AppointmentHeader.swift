@@ -12,7 +12,7 @@ protocol BDelegate {
     func switchLists(item:Int) -> [Appointment]
 }
 
-class AppointmentHeader: UITableViewCell {
+class AppointmentHeader: UITableViewHeaderFooterView {
     
     var delegate:BDelegate?
     
@@ -56,11 +56,11 @@ class AppointmentHeader: UITableViewCell {
         // Initialization code
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
     
     
     
