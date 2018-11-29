@@ -16,6 +16,8 @@ class AppointmentHeader: UITableViewHeaderFooterView {
     
     var delegate:BDelegate?
     
+    var currentSelection:Int = 0
+    
     @IBOutlet weak var topLabel: UILabel!
     
     
@@ -68,8 +70,11 @@ class AppointmentHeader: UITableViewHeaderFooterView {
     
     
     
-    func setup(header:String) {
+    func setup(header:String, currentSelection:Int) {
         self.topLabel.text = header
+        self.currentSelection = currentSelection
+        segmentedControl.selectedSegmentIndex = currentSelection
+        
 
     }
     

@@ -30,7 +30,7 @@ class ViewController: UIViewController, BDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var currentSelection:Int = 0
     
     var items:[Appointment] = []
     
@@ -39,11 +39,13 @@ class ViewController: UIViewController, BDelegate {
         switch item {
         case 0:
             items = filterLists(currentList: .list1)
+
         case 1:
             items = filterLists(currentList: .list2)
         default:
             items = []
         }
+        currentSelection = item
         tableView.reloadSections([0, 1], with: .fade)
         return items
 
@@ -152,7 +154,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerView") as? AppointmentHeader else { return UITableViewCell() }
 
         headerCell.delegate = self
-        headerCell.setup(header: "Test")
+        headerCell.setup(header: "Test", currentSelection: currentSelection)
         return headerCell
     }
     
