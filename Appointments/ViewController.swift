@@ -28,10 +28,10 @@ enum AppointmentType: Int {
 //    }
 //}
 
-func filterLists(inputArray:[Appointment]) -> [Appointment] {
+func filterLists(currentList:AppointmentType) -> [Appointment] {
     
-    var workingArray = inputArray
-    var currentList = AppointmentType.list1
+    var workingArray:[Appointment] = []
+//    var currentList = AppointmentType.list1
 //    currentList = .list2
     
     switch currentList {
@@ -60,13 +60,30 @@ func filterLists(inputArray:[Appointment]) -> [Appointment] {
 //    case serverError = 500
 //}
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, BDelegate {
+    
+    var items:[Appointment] = []
+    
+    func switchLists(item: Int) -> [Appointment] {
+        print(item)
+        switch item {
+        case 0:
+            items = filterLists(currentList: .list1)
+        case 1:
+            items = filterLists(currentList: .list2)
+        default:
+            items = []
+        }
+        return items
+
+    }
+    
 
 
     
     
     var emptyItems:[Appointment] = []
-    var items:[Appointment] = filterLists(inputArray: [])
+//    var items:[Appointment] = filterLists(inputArray: [])
     var headerLabels:[Header] = []
 
     override func viewDidLoad() {
@@ -132,6 +149,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerView") as? AppointmentHeader else { return UITableViewCell() }
+        
+        headerCell.delegate = self
         headerCell.setup(header: "Test")
         return headerCell
     }

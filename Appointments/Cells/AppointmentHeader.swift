@@ -8,22 +8,32 @@
 
 import UIKit
 
+protocol BDelegate {
+    func switchLists(item:Int) -> [Appointment]
+}
+
 class AppointmentHeader: UITableViewCell {
+    
+    var delegate:BDelegate?
     
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var topLabel: UILabel!
     
     @IBAction func segmentedController(_ sender: Any) {
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            topLabel.text = "First segment selected.";
-        case 1:
-            topLabel.text = "Second segment selected.";
-        default:
-            topLabel.text = "Label";
-        }
+//        switch segmentedControl.selectedSegmentIndex {
+//        case 0:
+////            topLabel.text = "First segment selected.";
+//            delegate?.switchLists(item: 0)
+//        case 1:
+////            topLabel.text = "Second segment selected.";
+//            delegate?.switchLists(item: 1)
+//        default:
+//            topLabel.text = "Label";
+//        }
 
+        delegate?.switchLists(item: segmentedControl.selectedSegmentIndex)
+        
     }
     
     
